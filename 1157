@@ -1,5 +1,5 @@
 import sys
-result = ""
+
 a = sys.stdin.readline().rstrip()
 
 a = a.upper()
