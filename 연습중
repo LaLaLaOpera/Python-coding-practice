@@ -1,0 +1,23 @@
+def solution(id_list, report, num):
+    newList = []
+    reported = []
+    result = []
+    for i in range(len(id_list)):
+        result.append(0)
+    for k in range (len(report)):
+        if report[k].split() not in newList:
+            newList.append(report[k].split())
+    for k in range (len(newList)):
+        reported.append(newList[k][1])
+    count= {}
+    for i in reported:
+        try: count[i] +=1
+        except: count[i]=1
+    for i in count:
+        if count[i] >=num:
+            for j in newList:
+                if j[1] == i:
+                    for m in id_list:
+                        if m ==  j[0]:
+                             result[(id_list.index(m))] = result[(id_list.index(m))]+1
+    return result
